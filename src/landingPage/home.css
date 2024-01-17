@@ -19,7 +19,7 @@
   display: block;
   box-sizing: border-box;
   border: 2px solid white;
-  border-radius: 100px
+  border-radius: 100px;
 }
 
 .gg-profile {
@@ -27,7 +27,8 @@
   transform: scale(var(--ggs,1));
   width: 22px;
   height: 22px;
-  position: relative
+  position: relative;
+  cursor: pointer;
 }
 
 .gg-profile::after,
@@ -37,7 +38,7 @@
   top: 2px;
   left: 5px;
   width: 8px;
-  height: 8px
+  height: 8px;
 }
 
 .gg-profile::after {
@@ -45,7 +46,7 @@
   top: 11px;
   left: 0px;
   width: 18px;
-  height: 18px
+  height: 18px;
 }
 
 /* Bell */
@@ -53,7 +54,7 @@
 .gg-bell,
 .gg-bell::before {
   border-top-left-radius: 100px;
-  border-top-right-radius: 100px
+  border-top-right-radius: 100px;
 }
 
 .gg-bell {
@@ -64,7 +65,8 @@
   border: 2px solid white;
   border-bottom: 0;
   width: 14px;
-  height: 14px
+  height: 14px;
+  cursor: pointer;
 }
 
 .gg-bell::after,
@@ -72,7 +74,7 @@
   content: "";
   display: block;
   box-sizing: border-box;
-  position: absolute
+  position: absolute;
 }
 
 .gg-bell::before {
@@ -80,7 +82,7 @@
   width: 4px;
   height: 4px;
   top: 4px;
-  left: 3px
+  left: 3px;
 }
 
 .gg-bell::after {
@@ -95,7 +97,7 @@
   top: 14px;
   left: -3px;
   border-bottom-left-radius: 100px;
-  border-bottom-right-radius: 100px
+  border-bottom-right-radius: 100px;
 }
 
 /* Mag */
@@ -109,7 +111,7 @@
   height: 16px;
   border: 2px solid white;
   border-radius: 100%;
-  margin-top: 7px
+  margin-top: 7px;
 }
 
 .gg-search::after {
@@ -123,7 +125,7 @@
   background: white;
   transform: rotate(-45deg);
   top: 10px;
-  left: 12px
+  left: 12px;
 }
 
 /* Filter */
@@ -149,13 +151,13 @@
   width: 12px;
   background: white;
   left: 2px;
-  top: 1px
+  top: 1px;
 }
 
 .gg-align-left::after {
   width: 6px;
   top: 7px;
-  opacity: .5
+  opacity: .5;
 }
 
 #Fsearch,

@@ -28,3 +28,8 @@
   opacity: 0;
   height: 0;
 }
+
+#UserPopup a {
+  color: white;
+  text-decoration: none;
+}

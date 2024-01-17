@@ -2,6 +2,7 @@ import './home.css'
 import './filterPopup.css'
 import './userPopup.css'
 import './notifyPopup.css'
+import { Link } from "react-router-dom"
 
 export function Home() {
 
@@ -59,11 +60,11 @@ export function Home() {
         <p>Nothing New yet!</p>
     </div>
     <div id='UserPopup' className='hide'>
-        <p>Profile</p>
-        <p>Setting</p>
-        <p>L&A</p>
-        <p>Log Out</p>
-        <p>Friends</p>
+        <p><Link to="/user">Profile</Link></p>
+        <p><Link to="/settings">Setting</Link></p>
+        <p><Link to="/license">L&A</Link></p>
+        <p><Link to="/logout">Log Out</Link></p>
+        <p><Link to="/friends">Friends</Link></p>
     </div>
     <div id='filterPopup' className='hide'>
         <p>filter</p>
