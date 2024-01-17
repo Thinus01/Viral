@@ -1,0 +1,20 @@
+#NotifyPopup {
+  position: absolute;
+  display: grid;
+  color: white;
+  background-color: gray;
+  right: 1.5%;
+  top: 100px;
+  width: 10%;
+  text-align: center;
+  border-radius: 5px;
+  justify-content: center;
+  padding-top: 0.5%;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  height: auto;
+}
+
+#NotifyPopup.hide {
+  opacity: 0;
+}

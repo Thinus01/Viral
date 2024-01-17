@@ -1,0 +1,30 @@
+#UserPopup {
+  position: absolute;
+  display: grid;
+  color: white;
+  background-color: gray;
+  right: 0.5%;
+  top: 100px;
+  width: 5%;
+  text-align: center;
+  border-radius: 5px;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  height: auto;
+}
+
+#UserPopup p {
+  border-bottom: solid 1px rgb(173, 173, 173);
+  transition: all 1s ease;
+}
+
+#UserPopup p:hover {
+  border-bottom: solid 1px rgb(42, 255, 42);
+  cursor: pointer;
+}
+
+#UserPopup.hide {
+  opacity: 0;
+  height: 0;
+}
