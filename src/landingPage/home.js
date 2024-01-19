@@ -3,6 +3,8 @@ import './filterPopup.css'
 import './userPopup.css'
 import './notifyPopup.css'
 import { Link } from "react-router-dom"
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 
 export function Home() {
 
@@ -35,6 +37,25 @@ export function Home() {
     filter.classList.add('hide');
     UserPopup.classList.add('hide');
   }
+
+  const [userName, setUserName] = useState('');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://127.0.0.1:3001/login/user/name', {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`
+          }
+        });
+        setUserName(response.data.name);
+      } catch (error) {
+        console.error('Error fetching user data', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
   <>
@@ -78,6 +99,7 @@ export function Home() {
         <p>filter</p>
         <p>filter</p>
     </div>
+    <h1>Welcome, {userName}!</h1>
   </>
   );
 }

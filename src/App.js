@@ -6,6 +6,7 @@ import { Logout } from './logout/logout';
 import { UserProfile } from './userProfile/userProfile';
 import { UserSettings } from './userSettings/userSettings';
 import { License } from './license/license';
+import { SignIn } from './login/SignIn';
 
 function App() {
   return <Routes>
@@ -15,6 +16,7 @@ function App() {
     <Route path="/license" element={<License />}/>
     <Route path="/logout" element={<Logout />}/>
     <Route path="/friends" element={<Friends />}/>
+    <Route path="/signIn" element={<SignIn />}/>
   </Routes>
 }
 
