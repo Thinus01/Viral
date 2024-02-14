@@ -4,11 +4,20 @@ import './userPopup.css'
 import './notifyPopup.css'
 import { Link } from "react-router-dom"
 import jwt_decode from 'jwt-decode';
+import User from '../components/User'
 
 const Home = () => {
   const token = localStorage.getItem('token');
+  
+  if (!token) {
+    const [setCurrUser, currUser] = [];
+    return (
+      <div className='App'>
+        <User setCurrUser={setCurrUser} currUser={currUser} />
+      </div>
+    );
+  } else {
   const decodedToken = jwt_decode(token);
-
   const filterPopup = () => {
     const notifyPopup = document.getElementById('NotifyPopup');
     const UserPopup = document.getElementById('UserPopup');
@@ -39,6 +48,11 @@ const Home = () => {
     UserPopup.classList.add('hide');
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    window.location.reload(false);
+  }
+
   return (
   <>
     <nav className="Nav navbar col-12">
@@ -66,7 +80,7 @@ const Home = () => {
         <p><Link to="/user">Profile</Link></p>
         <p><Link to="/settings">Setting</Link></p>
         <p><Link to="/license">L&A</Link></p>
-        <p>Log Out</p>
+        <button onClick={handleLogout}>Log Out</button>
         <p><Link to="/friends">Friends</Link></p>
     </div>
     <div id='filterPopup' className='hide'>
@@ -84,6 +98,7 @@ const Home = () => {
     <h1>Welcome, {decodedToken.name}!</h1>
   </>
   );
+}
 }
 
 export default Home;

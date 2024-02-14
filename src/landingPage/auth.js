@@ -27,7 +27,6 @@ const getUserFromToken = async (token) => {
 
     return user;
   } catch (error) {
-    console.error('Error decoding token or fetching user data:', error);
     return null;
   }
 };
