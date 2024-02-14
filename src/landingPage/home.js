@@ -3,10 +3,11 @@ import './filterPopup.css'
 import './userPopup.css'
 import './notifyPopup.css'
 import { Link } from "react-router-dom"
-import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import jwt_decode from 'jwt-decode';
 
-export function Home() {
+const Home = () => {
+  const token = localStorage.getItem('token');
+  const decodedToken = jwt_decode(token);
 
   const filterPopup = () => {
     const notifyPopup = document.getElementById('NotifyPopup');
@@ -36,26 +37,7 @@ export function Home() {
     notifyPopup.classList.toggle('hide');
     filter.classList.add('hide');
     UserPopup.classList.add('hide');
-  }
-
-  const [userName, setUserName] = useState('');
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('http://127.0.0.1:3001/login/user/name', {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem('token')}`
-          }
-        });
-        setUserName(response.data.name);
-      } catch (error) {
-        console.error('Error fetching user data', error);
-      }
-    };
-
-    fetchData();
-  }, []);
+  };
 
   return (
   <>
@@ -84,7 +66,7 @@ export function Home() {
         <p><Link to="/user">Profile</Link></p>
         <p><Link to="/settings">Setting</Link></p>
         <p><Link to="/license">L&A</Link></p>
-        <p><Link to="/logout">Log Out</Link></p>
+        <p>Log Out</p>
         <p><Link to="/friends">Friends</Link></p>
     </div>
     <div id='filterPopup' className='hide'>
@@ -99,7 +81,9 @@ export function Home() {
         <p>filter</p>
         <p>filter</p>
     </div>
-    <h1>Welcome, {userName}!</h1>
+    <h1>Welcome, {decodedToken.name}!</h1>
   </>
   );
 }
+
+export default Home;
