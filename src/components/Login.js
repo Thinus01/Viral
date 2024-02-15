@@ -1,4 +1,5 @@
-import { useRef } from "react"
+import { useEffect, useRef } from "react"
+import { redirect } from "react-router-dom"
 const Login = ({setCurrUser, setShow}) =>{
   const formRef=useRef()
   const login=async (userInfo, setCurrUser)=>{
@@ -20,6 +21,11 @@ const Login = ({setCurrUser, setShow}) =>{
        console.log("error", error)
     }
 }
+
+  const Redirect = () => {
+    window.location.reload(false);
+  }
+
   const handleSubmit=e=>{
     e.preventDefault()
       const formData=new FormData(formRef.current)
@@ -29,11 +35,13 @@ const Login = ({setCurrUser, setShow}) =>{
       }
       login(userInfo, setCurrUser)
       e.target.reset()
+      setTimeout(Redirect, 300);
   }
   const handleClick=e=>{
     e.preventDefault()
     setShow(false)
   }
+
   return(
     <div id="Greeting">
       <form ref={formRef} onSubmit={handleSubmit}>

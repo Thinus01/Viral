@@ -5,6 +5,8 @@ import './notifyPopup.css'
 import { Link } from "react-router-dom"
 import jwt_decode from 'jwt-decode';
 import User from '../components/User'
+import { useEffect } from 'react'
+import { useHistory } from 'react-router-dom';
 
 const Home = () => {
   const token = localStorage.getItem('token');

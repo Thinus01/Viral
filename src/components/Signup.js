@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { useEffect, useRef } from "react"
 const Signup=({setCurrUser, setShow})=>{
   const formRef = useRef()
   const signup=async (userInfo, setCurrUser)=>{
@@ -20,6 +20,11 @@ const Signup=({setCurrUser, setShow})=>{
       console.log("error", error)
     }
   }
+
+  const Redirect = () => {
+    window.location.reload(false);
+  }
+
     const handleSubmit=e=>{
         e.preventDefault()
         const formData=new FormData(formRef.current)
@@ -29,11 +34,13 @@ const Signup=({setCurrUser, setShow})=>{
         }
         signup(userInfo, setCurrUser)
         e.target.reset()
+        setTimeout(Redirect, 300);
     }
     const handleClick=e=>{
         e.preventDefault()
         setShow(true)
     }
+
     return(
         <div id="Greeting">
         <form ref={formRef} onSubmit={handleSubmit}>
