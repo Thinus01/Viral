@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 const Signup=({setCurrUser, setShow})=>{
   const formRef = useRef()
   const signup=async (userInfo, setCurrUser)=>{

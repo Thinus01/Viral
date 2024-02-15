@@ -1,5 +1,4 @@
-import { useEffect, useRef } from "react"
-import { redirect } from "react-router-dom"
+import { useRef } from "react"
 const Login = ({setCurrUser, setShow}) =>{
   const formRef=useRef()
   const login=async (userInfo, setCurrUser)=>{
