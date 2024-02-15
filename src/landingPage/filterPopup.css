@@ -1,0 +1,17 @@
+#filterPopup {
+  width: 100vw;
+  background-color: rgb(39, 39, 39);
+  transition: all 1s ease;
+  overflow: hidden;
+  max-height: 400px;
+  opacity: 1;
+  transform-origin: top;
+  border: solid 1px rgb(80, 80, 80);
+  color: white;
+  padding-left: 3%;
+}
+
+#filterPopup.hide {
+  max-height: 0;
+  border: solid 1px rgba(128, 128, 128, 0);
+}
