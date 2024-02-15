@@ -1,7 +1,7 @@
 const Logout =({setCurrUser})=>{
     const logout=async (setCurrUser)=>{
         try {
-            const response=await fetch("https://viral-backend-7jvg.onrender.com/logout",{
+            const response=await fetch("https://viral-backend.onrender.com/logout",{
                 method: "delete",
                 headers: {
                     "content-type": "application/json",

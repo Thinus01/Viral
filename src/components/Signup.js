@@ -2,7 +2,7 @@ import { useRef } from "react"
 const Signup=({setCurrUser, setShow})=>{
   const formRef = useRef()
   const signup=async (userInfo, setCurrUser)=>{
-    const url="https://viral-backend-7jvg.onrender.com/signup"
+    const url="https://viral-backend.onrender.com/signup"
     try{
       const response=await fetch(url, {
         method: 'post',
