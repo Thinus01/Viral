@@ -2,7 +2,7 @@ import { useRef } from "react"
 const Login = ({setCurrUser, setShow}) =>{
   const formRef=useRef()
   const login=async (userInfo, setCurrUser)=>{
-    const url="http://localhost:3001/login"
+    const url="https://viral-backend-7jvg.onrender.com/login"
     try{
         const response=await fetch(url, {
             method: "post",
@@ -22,7 +22,7 @@ const Login = ({setCurrUser, setShow}) =>{
 }
 
   const Redirect = () => {
-    window.location.reload(false);
+    
   }
 
   const handleSubmit=e=>{
