@@ -5,12 +5,13 @@ import './notifyPopup.css'
 import { Link } from "react-router-dom"
 import jwt_decode from 'jwt-decode';
 import User from '../components/User'
+import React, { useState } from 'react';
 
 const Home = () => {
   const token = localStorage.getItem('token');
+  const [currUser, setCurrUser] = useState(null); 
   
   if (!token) {
-    const [setCurrUser, currUser] = [];
     return (
       <div className='App'>
         <User setCurrUser={setCurrUser} currUser={currUser} />
