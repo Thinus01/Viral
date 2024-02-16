@@ -47,17 +47,18 @@ const Login = ({ setCurrUser, setShow }) => {
 
   return (
     <div id="Greeting">
-      <form ref={formRef} onSubmit={handleSubmit}>
-        Email: <input type="email" name="email" placeholder="email" />
-        <br />
-        Password: <input type="password" name="password" placeholder="password" />
-        <br />
-        <input type="submit" value="Login" />
+      <div className="InOrUp d-flex">
+        <a className="Entry ELeft selected" href="#login">Login</a>
+        <a className="Entry ERight unselected" href="#signup" onClick={handleClick}>Signup</a>
+      </div>
+      <form className="UserDetail" ref={formRef} onSubmit={handleSubmit}>
+        <input className="offset-1 UserEmail" type="email" name="email" placeholder="email" /><br />
+        <input className="offset-1 UserPass" type="password" name="password" placeholder="password" /><br />
+        <input className="offset-1 UserSubmit" type="submit" value="Login" />
       </form>
-      {error && <p>{error}</p>}
+      {error && <p className="LoadingLog">{error}</p>}
       <br />
-      <div>Not registered yet, <a href="#signup" onClick={handleClick}>Signup</a></div>
-      {loading && <div>Loading...</div>}
+      {loading && <div className="LoadingLog">Loading...</div>}
     </div>
   );
 };

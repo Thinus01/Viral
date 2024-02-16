@@ -1,3 +1,4 @@
+import './login.css'
 import Signup from "./Signup";
 import Login from './Login'
 import Logout from './Logout'
@@ -12,7 +13,7 @@ const User = ({currUser, setCurrUser}) => {
             </div>
         )
     return (
-        <div>
+        <div id="Register" className='offset-6'>
             { show?
                 <Login setCurrUser={setCurrUser} setShow={setShow}/>  
                 :

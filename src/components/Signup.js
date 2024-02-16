@@ -1,9 +1,12 @@
-import { useRef } from "react"
+import { useState, useRef } from "react";
 const Signup=({setCurrUser, setShow})=>{
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const formRef = useRef()
   const signup=async (userInfo, setCurrUser)=>{
     const url="https://viral-backend.onrender.com/signup"
     try{
+      setLoading(true);
       const response=await fetch(url, {
         method: 'post',
         headers: {
@@ -16,8 +19,10 @@ const Signup=({setCurrUser, setShow})=>{
       if(!response.ok) throw data.error
       localStorage.setItem('token', response.headers.get("Authorization"))
       setCurrUser(data)
-    } catch (error){
-      console.log("error", error)
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -42,18 +47,22 @@ const Signup=({setCurrUser, setShow})=>{
     }
 
     return(
-        <div id="Greeting">
-        <form ref={formRef} onSubmit={handleSubmit}>
-            Name: <input type="name" name='name' placeholder="name" />
-            <br/>
-            Email: <input type="email" name='email' placeholder="email" />
-            <br/>
-            Password: <input type="password" name='password' placeholder="password" />
-            <br/>
-            <input type='submit' value="Submit" />
-        </form>
-        <br />
-        <div>Already registered, <a href="#login" onClick={handleClick} >Login</a> here.</div>
+      <div id="Greeting">
+        <div className="InOrUp d-flex">
+          <a className="Entry ELeft unselected" href="#login" onClick={handleClick} >Login</a>
+          <a className="Entry ERight selected" href="#signup">Signup</a>
+        </div>
+      <form className="UserDetail" ref={formRef} onSubmit={handleSubmit}>
+          <input className="offset-1 UserName" type="name" name='name' placeholder="name" /><br />
+          <input className="offset-1 UserEmail" type="email" name='email' placeholder="email" /><br />
+          <input className="offset-1 UserPass" type="password" name='password' placeholder="password" /><br />
+          <input className="offset-1 UserSubmit" type='submit' value="Submit" />
+      </form>
+      {error && <p className="LoadingLog">{error}</p>}
+      <br />
+      {loading && <div className="LoadingLog">Loading...</div>}
+      <br />
+        
     </div>
     )
 }
