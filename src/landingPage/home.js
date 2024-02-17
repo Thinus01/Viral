@@ -3,9 +3,10 @@ import './filterPopup.css'
 import './userPopup.css'
 import './notifyPopup.css'
 import { Link } from "react-router-dom"
-import jwt_decode from 'jwt-decode';
+// import jwt_decode from 'jwt-decode'; DONT REMOVE JWT DECODE!
 import User from '../components/User'
 import React, { useState } from 'react';
+import Content from './content'
 
 const Home = () => {
   const token = localStorage.getItem('token');
@@ -18,7 +19,7 @@ const Home = () => {
       </div>
     );
   } else {
-  const decodedToken = jwt_decode(token);
+  // const decodedToken = jwt_decode(token); IMPORTANT FOR LATER USE!
   const filterPopup = () => {
     const notifyPopup = document.getElementById('NotifyPopup');
     const UserPopup = document.getElementById('UserPopup');
@@ -96,7 +97,28 @@ const Home = () => {
         <p>filter</p>
         <p>filter</p>
     </div>
-    <h1>Welcome, {decodedToken.name}!</h1>
+    <div className='d-flex DisplayCollection'>
+      <div className='DisplayContent d-grid col-3'><Content /></div>
+      <div className='DisplayContent d-grid col-3'><Content /></div>
+      <div className='DisplayContent d-grid col-3'><Content /></div>
+      <div className='DisplayContent d-grid col-3'><Content /></div>
+      <div className='DisplayContent d-grid col-3'><Content /></div>
+      <div className='DisplayContent d-grid col-3'><Content /></div>
+      <div className='DisplayContent d-grid col-3'><Content /></div>
+      <div className='DisplayContent d-grid col-3'><Content /></div>
+    </div>
+    <div className='d-flex DisplayCollection'>
+      <div className='DisplayContent d-grid col-3'><Content /></div>
+      <div className='DisplayContent d-grid col-3'><Content /></div>
+      <div className='DisplayContent d-grid col-3'><Content /></div>
+      <div className='DisplayContent d-grid col-3'><Content /></div>
+    </div>
+    <div className='d-flex DisplayCollection'>
+      <div className='DisplayContent d-grid col-3'><Content /></div>
+      <div className='DisplayContent d-grid col-3'><Content /></div>
+      <div className='DisplayContent d-grid col-3'><Content /></div>
+      <div className='DisplayContent d-grid col-3'><Content /></div>
+    </div>
   </>
   );
 }

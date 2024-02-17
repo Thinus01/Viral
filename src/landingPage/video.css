@@ -1,0 +1,25 @@
+.DisplayCollection {
+  overflow-y: hidden;
+}
+
+.thumbnail {
+  border-radius: 16px;
+}
+
+.Video {
+  text-decoration: none;
+  text-align: center;
+}
+
+.title {
+  font-size: 30px;
+  color: #ffffff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+  background: -webkit-linear-gradient(#868686 50%, #00c50a);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 2px #efffd56c;
+}
