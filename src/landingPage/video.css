@@ -1,5 +1,5 @@
 .DisplayCollection {
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .thumbnail {
@@ -22,4 +22,26 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 0 2px #efffd56c;
+}
+
+.VidCycle { /* Cycle Butotn */
+  width: 20rem;
+  background-color: black;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
+}
+
+.video-list {
+  display: flex;
+  transition: transform 0.5s ease;
 }

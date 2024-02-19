@@ -7,10 +7,11 @@ import { Link } from "react-router-dom"
 import User from '../components/User'
 import React, { useState } from 'react';
 import Content from './content'
+import { Video } from '../displayContent/displayGenre'
 
 const Home = () => {
   const token = localStorage.getItem('token');
-  const [currUser, setCurrUser] = useState(null); 
+  const [currUser, setCurrUser] = useState(null);
   
   if (!token) {
     return (
@@ -98,14 +99,7 @@ const Home = () => {
         <p>filter</p>
     </div>
     <div className='d-flex DisplayCollection'>
-      <div className='DisplayContent d-grid col-3'><Content /></div>
-      <div className='DisplayContent d-grid col-3'><Content /></div>
-      <div className='DisplayContent d-grid col-3'><Content /></div>
-      <div className='DisplayContent d-grid col-3'><Content /></div>
-      <div className='DisplayContent d-grid col-3'><Content /></div>
-      <div className='DisplayContent d-grid col-3'><Content /></div>
-      <div className='DisplayContent d-grid col-3'><Content /></div>
-      <div className='DisplayContent d-grid col-3'><Content /></div>
+      <div className='DisplayContent d-flex col-12'><Video /></div>
     </div>
     <div className='d-flex DisplayCollection'>
       <div className='DisplayContent d-grid col-3'><Content /></div>

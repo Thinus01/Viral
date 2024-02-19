@@ -1,13 +1,14 @@
 import './video.css'
 
+export const VideoInfo = [
+  {
+  thumbnail: '/images/DemoImage.jpg',
+  title: 'Top 10 weird wallpapers',
+  link: '#'
+  }
+];
+
 const Content = () => {
-  const VideoInfo = [
-    {
-    thumbnail: '/images/DemoImage.jpg',
-    title: 'Top 10 weird wallpapers',
-    link: '#'
-    }
-  ];
 
   return (
     <a href={VideoInfo[0].link} className="Video">
